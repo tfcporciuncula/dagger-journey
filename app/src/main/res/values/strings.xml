@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Dagger Journey</string>
     <string name="log_template">--> %s</string>
+
+    <string name="log_preferences_name" translatable="false">com.fredporciuncula.daggerjourney.LOG_PREFERENCES</string>
+    <string name="log_preference_key" translatable="false">com.fredporciuncula.daggerjourney.KEY_LOG</string>
 </resources>

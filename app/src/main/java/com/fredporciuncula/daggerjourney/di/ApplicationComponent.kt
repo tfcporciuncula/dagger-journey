@@ -6,7 +6,8 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
-@Singleton @Component
+@Singleton
+@Component(modules = [SharedPreferencesModule::class])
 interface ApplicationComponent {
 
   @Component.Factory
