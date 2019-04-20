@@ -1,13 +1,13 @@
 package com.fredporciuncula.daggerjourney.di
 
 import android.content.Context
-import com.fredporciuncula.daggerjourney.business.BusinessRunner
+import com.fredporciuncula.daggerjourney.business.Business
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [SharedPreferencesModule::class])
+@Component(modules = [SharedPreferencesModule::class, BusinessModule::class])
 interface ApplicationComponent {
 
   @Component.Factory
@@ -15,5 +15,5 @@ interface ApplicationComponent {
     fun create(@BindsInstance applicationContext: Context): ApplicationComponent
   }
 
-  val businessRunner: BusinessRunner
+  val businessRunner: Business.Runner
 }

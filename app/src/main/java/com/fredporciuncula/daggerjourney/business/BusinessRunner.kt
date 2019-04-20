@@ -6,7 +6,7 @@ import javax.inject.Singleton
 @Singleton
 class BusinessRunner @Inject constructor(
   private val businessUtil: BusinessUtil
-) {
+) : Business.Runner {
 
-  fun doBusiness() = businessUtil.log("Business done.")
+  override fun doBusiness() = businessUtil.log("Business done.")
 }
