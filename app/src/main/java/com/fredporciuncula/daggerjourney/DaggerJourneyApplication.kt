@@ -8,10 +8,7 @@ import timber.log.Timber
 class DaggerJourneyApplication : Application(), InjectorProvider {
 
   override val component by lazy {
-    DaggerApplicationComponent
-      .builder()
-      .applicationContext(applicationContext)
-      .build()
+    DaggerApplicationComponent.factory().create(applicationContext)
   }
 
   override fun onCreate() {
