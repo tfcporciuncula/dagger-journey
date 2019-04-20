@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dagger Journey</string>
+    <string name="log_template">--> %s</string>
 </resources>
