@@ -1,14 +1,12 @@
 package com.fredporciuncula.daggerjourney.di
 
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import javax.inject.Inject
-import javax.inject.Provider
+import androidx.lifecycle.ViewModelProviders
 
-class ViewModelFactory<T : ViewModel> @Inject constructor(
-  private val viewModel: Provider<T>
-) : ViewModelProvider.Factory {
-
-  @Suppress("UNCHECKED_CAST")
-  override fun <T : ViewModel> create(modelClass: Class<T>) = viewModel.get() as T
-}
+@Suppress("UNCHECKED_CAST")
+inline fun <reified T : ViewModel> FragmentActivity.getViewModel(crossinline factory: () -> T) =
+  ViewModelProviders.of(this, object : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>) = factory() as T
+  }).get(T::class.java)
