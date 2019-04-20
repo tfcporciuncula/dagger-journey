@@ -8,7 +8,9 @@ import com.fredporciuncula.daggerjourney.di.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-  private val viewModel by viewModel { injector.myViewModel }
+  private val viewModel by viewModel {
+    injector.myViewModelFactory.create(initLogMessage = "Initialized.")
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
