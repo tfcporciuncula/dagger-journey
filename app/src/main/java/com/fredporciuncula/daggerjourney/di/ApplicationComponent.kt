@@ -1,7 +1,7 @@
 package com.fredporciuncula.daggerjourney.di
 
 import android.content.Context
-import com.fredporciuncula.daggerjourney.view.MyViewModelFactory
+import com.fredporciuncula.daggerjourney.view.MyViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -15,5 +15,5 @@ interface ApplicationComponent {
     fun create(@BindsInstance applicationContext: Context): ApplicationComponent
   }
 
-  val myViewModelFactory: MyViewModelFactory
+  val myViewModelFactory: ViewModelFactory<MyViewModel>
 }
