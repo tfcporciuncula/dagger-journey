@@ -3,22 +3,16 @@ package com.fredporciuncula.daggerjourney
 import android.app.Application
 import com.fredporciuncula.daggerjourney.di.ApplicationComponent
 import com.fredporciuncula.daggerjourney.di.DaggerApplicationComponent
+import com.fredporciuncula.daggerjourney.di.InjectorProvider
 import timber.log.Timber
 
-class DaggerJourneyApplication : Application() {
+class DaggerJourneyApplication : Application(), InjectorProvider {
 
-  companion object {
-    lateinit var component: ApplicationComponent private set
-  }
+  override val component: ApplicationComponent by lazy { DaggerApplicationComponent.create() }
 
   override fun onCreate() {
     super.onCreate()
-    initializeComponent()
     setupTimber()
-  }
-
-  private fun initializeComponent() {
-    component = DaggerApplicationComponent.create()
   }
 
   private fun setupTimber() {
