@@ -33,6 +33,9 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha04'
 
+    implementation 'androidx.activity:activity-ktx:1.0.0-alpha06'
+    implementation 'androidx.fragment:fragment-ktx:1.1.0-alpha06'
+
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
     implementation 'com.google.dagger:dagger:2.22.1'
